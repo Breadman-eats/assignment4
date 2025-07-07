@@ -14,7 +14,7 @@
 
 
 // Step 1 - Importing required modules
-const LegoData = require("./modules/legoSets");
+const LegoData = require("../modules/legoSets");
 const legoData = new LegoData();
 
 const express = require("express");
