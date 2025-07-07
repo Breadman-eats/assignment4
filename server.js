@@ -26,6 +26,7 @@ const HTTP_PORT = process.env.PORT || 8080;
 // Serve static files from the /public
 app.use(express.static(__dirname + '/public'));
 
+// Setting views application settings
 app.set('views', __dirname + '/views');
 
 // Serve static HTML pages
