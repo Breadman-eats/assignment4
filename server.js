@@ -14,7 +14,7 @@
 
 
 // Step 1 - Importing required modules
-const LegoData = require("../modules/legoSets");
+const LegoData = require("./modules/LegoSets");
 const legoData = new LegoData();
 
 const express = require("express");
@@ -37,7 +37,7 @@ app.get("/about", (req, res) => {
 });
 
 // Lego Sets route with optional ?theme query
-app.get("/lego/sets", async (req, res) => {
+app.get("/Lego/Sets", async (req, res) => {
     try {
         if (req.query.theme) {
             const result = await legoData.getSetsByTheme(req.query.theme);
@@ -52,7 +52,7 @@ app.get("/lego/sets", async (req, res) => {
 });
 
 // Specific Lego Set route
-app.get("/lego/sets/:set_num", async (req, res) => {
+app.get("/Lego/Sets/:set_num", async (req, res) => {
     try {
         const result = await legoData.getSetByNum(req.params.set_num);
         res.json(result);
