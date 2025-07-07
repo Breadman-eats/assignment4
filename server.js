@@ -1,5 +1,5 @@
 /********************************************************************************
-*  WEB700 – Assignment 03
+*  WEB700 – Assignment 04
 * 
 *  I declare that this assignment is my own work in accordance with Seneca's
 *  Academic Integrity Policy:
@@ -7,7 +7,7 @@
 * 
 *  Name: Matthaus Matthew Student ID: 137314233 Date: 2025-06-14
 *
-*  Published URL: ___________________________________________________________
+*  Published URL: https://vercel.com/matthaus-matthews-projects/assignment4-q5df/DXGEsK4ETak1teLGucbX7b293Gae
 *
 ********************************************************************************/
 
@@ -24,7 +24,8 @@ const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
 // Serve static files from the /public
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, "..", "public")));
+
 
 
 // Serve static HTML pages
@@ -36,7 +37,7 @@ app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/about.html"));
 });
 
-// Lego Sets route with optional ?theme query
+// Lego Sets route with optional theme query
 app.get("/Lego/Sets", async (req, res) => {
     try {
         if (req.query.theme) {
