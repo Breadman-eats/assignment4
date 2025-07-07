@@ -7,7 +7,7 @@ const app = express();
 const legoData = new LegoData();
 
 // Middleware for static files
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(__dirname + '/public'));
 
 // Routes
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "..", "views/home.html")));
